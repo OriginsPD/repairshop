@@ -1,3 +1,7 @@
+export const metadata ={
+    title: "Customer",
+}
+
 export default function Customers(){
     return(
         <div>
