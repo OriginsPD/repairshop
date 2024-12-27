@@ -51,7 +51,7 @@ export default async function TicketFormPage({
                     </>
                 );
             }
-            const customer = await getCustomer(ticket.customer_id);
+            const customer = await getCustomer(ticket.customerId);
             // return ticket form
             console.log('ticket:', ticket);
             console.log('customer:', customer);
