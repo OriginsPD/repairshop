@@ -1,15 +1,16 @@
 import { getCustomer } from "@/lib/queries/getCustomer";
 import BackButton from "@/components/BackButton";
 import * as Sentry from "@sentry/nextjs"
+import CustomerForm from "@/app/(rs)/customers/form/customerForm";
 
 export default async function CustomerFormPage({
     searchParams,
 }: { searchParams: Promise<{ [key: string]: string | undefined }> }) {
     try {
-        const { customerId, ticketId } = await searchParams;
-        const customer = await getCustomer(parseInt(customerId!));
+        const { customerId } = await searchParams;
         // Edit customer form
         if (customerId) {
+            const customer = await getCustomer(parseInt(customerId!));
             if (!customer) {
                 return (
                     <>
@@ -17,11 +18,12 @@ export default async function CustomerFormPage({
                         <BackButton title="Go Back" variant="default" />
                     </>
                 );
-                // TODO: Add customer form component here
             }
-            console.log(customer);
+            // TODO: Add edit customer form component here
+            return <CustomerForm customer={customer} />;
         } else {
             // TODO: Add new customer form component here
+            return <CustomerForm />;
         }
     } catch (e) {
         if (e instanceof Error) {

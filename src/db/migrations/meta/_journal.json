@@ -15,6 +15,13 @@
       "when": 1735172814450,
       "tag": "0001_modern_pride",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1735247124402,
+      "tag": "0002_short_imperial_guard",
+      "breakpoints": true
     }
   ]
 }
